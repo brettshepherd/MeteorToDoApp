@@ -21,7 +21,7 @@ export default class Register extends Component {
          error: err.reason
        });
      } else {
-       this.props.history.push('/login');
+       this.props.registerToggle();
      }
    });
  }
@@ -47,7 +47,7 @@ export default class Register extends Component {
             <input placeholder="Password" type="password" id="signup-password" className="form-control" ref = 'password'/>
           </div>
           <div className="loginBtns">
-            <Link to='/login'>Already Have An Account?</Link>
+            <p onClick = {this.props.registerToggle.bind(this)} >Already Have An Account?</p>
             <button type="submit" className="btn btn-primary" >Next</button>
           </div>
         </form>

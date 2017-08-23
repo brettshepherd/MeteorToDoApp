@@ -24,9 +24,9 @@ export default class Login extends Component {
             error: err.reason
           });
           console.log(this.state.error);
-        } else {
-          const { history: { push } } = this.props;
-          push('/Home');
+        }
+        else{
+          this.props.loginTrue();
         }
       });
     }
@@ -48,7 +48,7 @@ export default class Login extends Component {
               <input placeholder="Password" type="password" id="login-password" className="form-control" ref = 'password'/>
             </div>
             <div className="loginBtns">
-              <Link to='/register'>Create Account</Link>
+              <p onClick = {this.props.registerToggle.bind(this)} >Create Account</p>
               <button type="submit" className="btn btn-primary" >Login</button>
             </div>
           </form>
